@@ -1,0 +1,52 @@
+# Logs
+*.log
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+.venv/
+
+# Rasa files
+models/
+results/
+*.db
+*.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Docker
+*.env
+docker-compose.override.yml
+*.bak
+*.tmp
+
+# Python pip cache
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Temporary files and directories
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# Configurations and local settings
+.config/
+.rasa/
+.keras/
