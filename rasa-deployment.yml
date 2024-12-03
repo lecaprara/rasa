@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rasa-deployment
+  namespace: rasa-namespace
+  labels:
+    app: rasa
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rasa
+  template:
+    metadata:
+      labels:
+        app: rasa
+    spec:
+      containers:
+        - name: rasa
+          image: leandrocaprara/rasa:latest
+          ports:
+            - containerPort: 5005
+          command: ["rasa"]
+          args: ["run", "--enable-api", "--cors", "*", "--debug"]

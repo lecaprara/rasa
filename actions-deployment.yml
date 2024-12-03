@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actions-deployment
+  namespace: rasa-namespace
+  labels:
+    app: actions
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: actions
+  template:
+    metadata:
+      labels:
+        app: actions
+    spec:
+      containers:
+        - name: rasa-actions
+          image: leandrocaprara/rasa2-action-server:latest
+          ports:
+            - containerPort: 5055
+          command: ["python"]
+          args: ["-m", "rasa_sdk", "--actions", "actions"]
